@@ -15,6 +15,12 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
   for = "/css/*"
   [headers.values]
     Cache-Control = "public, max-age=3600"

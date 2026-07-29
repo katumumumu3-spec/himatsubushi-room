@@ -21,7 +21,7 @@
 - `sitemap.xml` … トップページを登録
 - OGP / Twitter Card … SNS共有用メタタグ（`index.html`）
 - `assets/favicon.svg` … ファビコン
-- `assets/og-image.png` … SNS共有画像
+- `assets/og-image.jpg` … SNS共有画像（1200×630）
 
 Google Search Console で所有権確認後、サイトマップ URL として次を送信してください。
 
