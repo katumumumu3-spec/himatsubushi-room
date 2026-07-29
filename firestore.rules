@@ -1,0 +1,60 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // js/firebase-config.js と同じ管理者メールへ変更してください。
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email == "katumumumu3@gmail.com";
+    }
+
+    function validApp(data) {
+      return data.keys().hasOnly([
+          "name",
+          "description",
+          "url",
+          "tags",
+          "images",
+          "searchText",
+          "createdAt",
+          "updatedAt"
+        ])
+        && data.name is string
+        && data.name.size() > 0
+        && data.name.size() <= 80
+        && data.description is string
+        && data.description.size() > 0
+        && data.description.size() <= 1200
+        && data.url is string
+        && data.url.size() > 0
+        && data.url.size() <= 500
+        && data.tags is list
+        && data.tags.size() > 0
+        && data.tags.size() <= 10
+        && data.images is list
+        && data.images.size() <= 4
+        && data.searchText is string
+        && data.searchText.size() <= 2500
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    match /apps/{appId} {
+      allow read: if true;
+      allow create: if isAdmin()
+        && validApp(request.resource.data)
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+      allow update: if isAdmin()
+        && validApp(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if isAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

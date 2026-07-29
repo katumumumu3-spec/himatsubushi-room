@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="ひまつぶしルームの管理者ページ。公開用の暇つぶしアプリ・無料ミニゲームの登録・編集・削除を行います。"
+    />
+    <meta name="theme-color" content="#ff6b6b" />
+    <title>アプリ管理（非公開） | ひまつぶしルーム</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="admin-body">
+    <header class="site-header">
+      <a class="brand" href="./index.html">
+        <span class="brand__icon" aria-hidden="true">🎮</span>
+        <span>
+          <strong>ひまつぶしルーム</strong>
+          <small>APP MANAGEMENT</small>
+        </span>
+      </a>
+      <a class="header-link" href="./index.html">公開ページを見る ↗</a>
+    </header>
+
+    <main class="admin-shell">
+      <section class="config-help" id="config-help" hidden>
+        <h1>Firebaseの設定が必要です</h1>
+        <p>
+          <code>js/firebase-config.js</code>
+          にFirebaseのWebアプリ設定と管理者メールを入力してください。
+        </p>
+        <p>詳しい手順は <code>README.md</code> に記載しています。</p>
+      </section>
+
+      <section class="auth-card" id="auth-card" hidden>
+        <div class="auth-card__icon" aria-hidden="true">🔑</div>
+        <h1>管理者ログイン</h1>
+        <p>登録済みの管理者Googleアカウントでログインしてください。</p>
+        <button class="button button--primary" id="login-button" type="button">
+          Googleでログイン
+        </button>
+        <p class="notice notice--error" id="auth-error" hidden></p>
+      </section>
+
+      <section id="admin-content" hidden>
+        <div class="admin-heading">
+          <div>
+            <p class="eyebrow">APP MANAGEMENT</p>
+            <h1>アプリ管理</h1>
+          </div>
+          <div class="admin-heading__user">
+            <span id="user-email"></span>
+            <button class="button button--ghost" id="logout-button" type="button">
+              ログアウト
+            </button>
+          </div>
+        </div>
+
+        <div id="admin-notice" hidden></div>
+
+        <div class="admin-layout">
+          <section class="panel">
+            <h2 id="form-title">新しいアプリを追加</h2>
+            <form id="app-form">
+              <div class="form-grid">
+                <label class="form-field form-field--full">
+                  <span>アプリ名 <span class="required">*</span></span>
+                  <input
+                    id="app-name"
+                    name="name"
+                    type="text"
+                    maxlength="80"
+                    required
+                    placeholder="例：3分で遊べる数字パズル"
+                  />
+                </label>
+
+                <label class="form-field form-field--full">
+                  <span>アプリ説明 <span class="required">*</span></span>
+                  <textarea
+                    id="app-description"
+                    name="description"
+                    maxlength="1200"
+                    required
+                    placeholder="遊び方やアプリの魅力を入力してください"
+                  ></textarea>
+                </label>
+
+                <label class="form-field form-field--full">
+                  <span>アプリURL <span class="required">*</span></span>
+                  <input
+                    id="app-url"
+                    name="url"
+                    type="url"
+                    maxlength="500"
+                    required
+                    placeholder="https://example.netlify.app"
+                  />
+                </label>
+
+                <div class="form-field form-field--full">
+                  <span class="form-label">タグ <span class="required">*</span></span>
+                  <div class="tag-editor">
+                    <input
+                      id="tag-input"
+                      type="text"
+                      maxlength="24"
+                      placeholder="例：パズル"
+                    />
+                    <button class="button button--ghost" id="add-tag-button" type="button">
+                      追加
+                    </button>
+                  </div>
+                  <div class="tag-list" id="selected-tags"></div>
+                  <div class="tag-suggestions" id="tag-suggestions"></div>
+                  <p class="field-help">1アプリにつき最大10個。Enterキーでも追加できます。</p>
+                </div>
+
+                <div class="form-field form-field--full">
+                  <span class="form-label">アプリ画像（最大4枚）</span>
+                  <label class="drop-zone" id="drop-zone">
+                    <input
+                      id="image-input"
+                      type="file"
+                      accept="image/jpeg,image/png,image/webp"
+                      multiple
+                    />
+                    <span>
+                      <strong>画像を選択またはドロップ</strong><br />
+                      JPEG・PNG・WebP / 1枚10MBまで
+                    </span>
+                  </label>
+                  <div class="image-previews" id="image-previews"></div>
+                  <p class="field-help">
+                    画像はアップロード前に最大1080×1920pxのWebPへ自動圧縮されます。
+                  </p>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="button button--ghost" id="cancel-edit" type="button" hidden>
+                  編集をキャンセル
+                </button>
+                <button class="button button--primary" id="submit-button" type="submit">
+                  アプリを登録
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <aside class="panel">
+            <h2>登録済みアプリ</h2>
+            <div class="admin-list" id="admin-list">
+              <div class="status-card">
+                <div class="loader" aria-hidden="true"></div>
+                <p>読み込み中...</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/admin.js"></script>
+  </body>
+</html>

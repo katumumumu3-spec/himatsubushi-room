@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="インストール不要の暇つぶしアプリ・無料ミニゲームをまとめたサイト。パズル・クイズ・診断など、スマホのスキマ時間ですぐ遊べるWebアプリを探せます。"
+    />
+    <meta
+      name="keywords"
+      content="暇つぶし,暇つぶしアプリ,無料ミニゲーム,ブラウザゲーム,スマホゲーム,パズル,クイズ,診断"
+    />
+    <meta name="theme-color" content="#ff6b6b" />
+    <title>暇つぶしアプリ・無料ミニゲーム一覧 | ひまつぶしルーム</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="page-decor page-decor--one" aria-hidden="true"></div>
+    <div class="page-decor page-decor--two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="ひまつぶしルーム ホーム">
+        <span class="brand__icon" aria-hidden="true">🎮</span>
+        <span>
+          <strong>ひまつぶしルーム</strong>
+          <small>ちょっと遊んで、ちょっと笑おう。</small>
+        </span>
+      </a>
+      <a class="header-link" href="./admin.html">管理者ページ</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__copy">
+          <p class="eyebrow">FREE MINI APPS</p>
+          <h1>今日のスキマ時間、<br /><em>なにして遊ぶ？</em></h1>
+          <p>
+            インストール不要。気になるアプリを見つけたら、ボタンひとつですぐに遊べます。
+          </p>
+          <a class="button button--primary" href="#apps">アプリを見つける</a>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="hero-card hero-card--back">QUIZ!</div>
+          <div class="hero-phone">
+            <span>ひま？</span>
+            <strong>PLAY!</strong>
+            <div class="hero-phone__button"></div>
+          </div>
+          <span class="spark spark--one">★</span>
+          <span class="spark spark--two">●</span>
+          <span class="spark spark--three">＋</span>
+        </div>
+      </section>
+
+      <section class="catalog" id="apps" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">APP COLLECTION</p>
+            <h2 id="catalog-title">遊べるアプリ</h2>
+          </div>
+          <p class="result-count" id="result-count" aria-live="polite">読み込み中...</p>
+        </div>
+
+        <div class="filter-panel">
+          <label class="search-field">
+            <span class="sr-only">キーワード検索</span>
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="アプリ名・説明・タグから検索"
+              autocomplete="off"
+            />
+          </label>
+          <label class="sort-field">
+            <span>投稿順</span>
+            <select id="sort-select">
+              <option value="desc">新しい順</option>
+              <option value="asc">古い順</option>
+            </select>
+          </label>
+          <button class="button button--ghost filter-reset" id="filter-reset" type="button">
+            条件をクリア
+          </button>
+        </div>
+
+        <div class="tag-filter" id="tag-filter" aria-label="タグで絞り込む"></div>
+
+        <div class="status-card" id="status-card">
+          <div class="loader" aria-hidden="true"></div>
+          <p>楽しいアプリを集めています...</p>
+        </div>
+        <div class="app-grid" id="app-grid" hidden></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>ひまつぶしルーム</strong>
+        <p>あなたの「ちょっと暇」を、楽しい時間に。</p>
+      </div>
+      <p>&copy; <span id="current-year"></span> ひまつぶしルーム</p>
+    </footer>
+
+    <dialog class="app-dialog" id="app-dialog">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="閉じる">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
