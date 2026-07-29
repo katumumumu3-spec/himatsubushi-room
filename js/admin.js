@@ -1,6 +1,5 @@
 import {
   addDoc,
-  adminEmail,
   appsCollection,
   auth,
   db,
@@ -501,7 +500,7 @@ async function handleAuth(user) {
   }
   if (!isAllowedAdmin(user)) {
     state.authError =
-      `このアカウントには管理権限がありません。設定済みの管理者（${adminEmail}）でログインしてください。`;
+      "このアカウントには管理権限がありません。管理者アカウントでログインしてください。";
     await signOut(auth);
     setAuthError(state.authError);
     elements.authCard.hidden = false;
