@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /js/firebase-config.js
+
+Sitemap: https://himatsubushiroom.com/sitemap.xml

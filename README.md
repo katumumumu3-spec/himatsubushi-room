@@ -13,6 +13,22 @@
 - 画像を最大1080×1920pxのWebPへ自動圧縮
 - スマートフォン・タブレット・PC対応
 
+## SEO / 公開設定
+
+独自ドメイン: `https://himatsubushiroom.com`
+
+- `robots.txt` … 公開ページを許可、管理ページを除外
+- `sitemap.xml` … トップページを登録
+- OGP / Twitter Card … SNS共有用メタタグ（`index.html`）
+- `assets/favicon.svg` … ファビコン
+- `assets/og-image.png` … SNS共有画像
+
+Google Search Console で所有権確認後、サイトマップ URL として次を送信してください。
+
+```text
+https://himatsubushiroom.com/sitemap.xml
+```
+
 ## 1. Firebaseプロジェクトを作る
 
 1. [Firebase Console](https://console.firebase.google.com/) で「プロジェクトを追加」を選びます。
