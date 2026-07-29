@@ -20,8 +20,9 @@
 - `robots.txt` … 公開ページを許可、管理ページを除外
 - `sitemap.xml` … トップページを登録
 - OGP / Twitter Card … SNS共有用メタタグ（`index.html`）
-- `assets/favicon.svg` … ファビコン
+- `assets/favicon.svg` / `favicon-48.png` / `favicon-192.png` … ファビコン（Google検索結果用にPNGを優先）
 - `assets/og-image.jpg` … SNS共有画像（1200×630）
+- `WebSite` 構造化データ … 検索結果のサイト名を「ひまつぶしルーム」にする希望をGoogleへ伝える
 
 Google Search Console で所有権確認後、サイトマップ URL として次を送信してください。
 
