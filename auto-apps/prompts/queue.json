@@ -3,12 +3,20 @@
   "items": [
     {
       "id": "2026-08-07-memory-fruits",
-      "status": "pending",
+      "status": "generated",
       "template": "memory",
       "name": "フルーツ神経衰弱",
       "description": "同じフルーツを見つけてペアを揃えよう。スキマ時間向けの簡単神経衰弱です。",
-      "tags": ["パズル", "神経衰弱"],
-      "config": { "pairs": 8, "theme": "fruits" }
+      "tags": [
+        "パズル",
+        "神経衰弱"
+      ],
+      "config": {
+        "pairs": 8,
+        "theme": "fruits"
+      },
+      "slug": "2026-08-07-memory-fruits",
+      "generatedAt": "2026-08-08T13:58:15.491Z"
     },
     {
       "id": "2026-08-08-quiz-japan",
@@ -16,8 +24,14 @@
       "template": "quiz",
       "name": "日本のクイズ5問",
       "description": "日本にまつわるかんたんクイズ。通勤・休憩の暇つぶしにどうぞ。",
-      "tags": ["クイズ", "雑学"],
-      "config": { "topic": "japan", "count": 5 }
+      "tags": [
+        "クイズ",
+        "雑学"
+      ],
+      "config": {
+        "topic": "japan",
+        "count": 5
+      }
     },
     {
       "id": "2026-08-09-clicker-15",
@@ -25,8 +39,15 @@
       "template": "clicker",
       "name": "15秒タップチャレンジ",
       "description": "制限時間15秒で何回タップできるか挑戦するシンプルゲームです。",
-      "tags": ["反射", "スコアアタック"],
-      "config": { "durationSec": 15, "buttonLabel": "タップ！", "goal": 40 }
+      "tags": [
+        "反射",
+        "スコアアタック"
+      ],
+      "config": {
+        "durationSec": 15,
+        "buttonLabel": "タップ！",
+        "goal": 40
+      }
     },
     {
       "id": "2026-08-10-reaction-basic",
@@ -34,8 +55,14 @@
       "template": "reaction",
       "name": "緑で反応せよ",
       "description": "画面が緑になった瞬間にタップ。反応速度を測るミニゲームです。",
-      "tags": ["反射", "計測"],
-      "config": { "minDelayMs": 1000, "maxDelayMs": 3200 }
+      "tags": [
+        "反射",
+        "計測"
+      ],
+      "config": {
+        "minDelayMs": 1000,
+        "maxDelayMs": 3200
+      }
     },
     {
       "id": "2026-08-11-sort-week",
@@ -43,8 +70,13 @@
       "template": "sort",
       "name": "曜日ならべ",
       "description": "バラバラの曜日カードを、正しい順番に並べ替えよう。",
-      "tags": ["パズル", "並べ替え"],
-      "config": { "preset": "week" }
+      "tags": [
+        "パズル",
+        "並べ替え"
+      ],
+      "config": {
+        "preset": "week"
+      }
     },
     {
       "id": "2026-08-12-memory-animals",
@@ -52,8 +84,14 @@
       "template": "memory",
       "name": "どうぶつ神経衰弱",
       "description": "かわいいどうぶつカードで神経衰弱。記憶力チェックにぴったりです。",
-      "tags": ["パズル", "神経衰弱"],
-      "config": { "pairs": 6, "theme": "animals" }
+      "tags": [
+        "パズル",
+        "神経衰弱"
+      ],
+      "config": {
+        "pairs": 6,
+        "theme": "animals"
+      }
     },
     {
       "id": "2026-08-13-quiz-animals",
@@ -61,8 +99,14 @@
       "template": "quiz",
       "name": "どうぶつクイズ",
       "description": "動物の知識を試すかんたん4択クイズです。",
-      "tags": ["クイズ", "どうぶつ"],
-      "config": { "topic": "animals", "count": 5 }
+      "tags": [
+        "クイズ",
+        "どうぶつ"
+      ],
+      "config": {
+        "topic": "animals",
+        "count": 5
+      }
     },
     {
       "id": "2026-08-14-clicker-10",
@@ -70,8 +114,15 @@
       "template": "clicker",
       "name": "10秒連打",
       "description": "たった10秒。連打力だけで勝負する超短時間ゲームです。",
-      "tags": ["反射", "短時間"],
-      "config": { "durationSec": 10, "buttonLabel": "連打！", "goal": 30 }
+      "tags": [
+        "反射",
+        "短時間"
+      ],
+      "config": {
+        "durationSec": 10,
+        "buttonLabel": "連打！",
+        "goal": 30
+      }
     },
     {
       "id": "2026-08-15-sort-numbers",
@@ -79,8 +130,14 @@
       "template": "sort",
       "name": "数字ならべ1〜8",
       "description": "1から8までの数字を小さい順に並べるシンプルパズルです。",
-      "tags": ["パズル", "数字"],
-      "config": { "preset": "numbers", "count": 8 }
+      "tags": [
+        "パズル",
+        "数字"
+      ],
+      "config": {
+        "preset": "numbers",
+        "count": 8
+      }
     },
     {
       "id": "2026-08-16-memory-sweets",
@@ -88,8 +145,14 @@
       "template": "memory",
       "name": "スイーツ神経衰弱",
       "description": "ドーナツやケーキのカードを揃える甘い神経衰弱です。",
-      "tags": ["パズル", "スイーツ"],
-      "config": { "pairs": 8, "theme": "sweets" }
+      "tags": [
+        "パズル",
+        "スイーツ"
+      ],
+      "config": {
+        "pairs": 8,
+        "theme": "sweets"
+      }
     },
     {
       "id": "2026-08-17-quiz-food",
@@ -97,8 +160,14 @@
       "template": "quiz",
       "name": "たべものクイズ",
       "description": "身近な食べ物に関するかんたんクイズで頭の体操を。",
-      "tags": ["クイズ", "食べ物"],
-      "config": { "topic": "food", "count": 5 }
+      "tags": [
+        "クイズ",
+        "食べ物"
+      ],
+      "config": {
+        "topic": "food",
+        "count": 5
+      }
     },
     {
       "id": "2026-08-18-reaction-fast",
@@ -106,8 +175,14 @@
       "template": "reaction",
       "name": "瞬間反応テスト",
       "description": "待ち時間が短め。素早い反応が求められるチャレンジ版です。",
-      "tags": ["反射", "チャレンジ"],
-      "config": { "minDelayMs": 800, "maxDelayMs": 2200 }
+      "tags": [
+        "反射",
+        "チャレンジ"
+      ],
+      "config": {
+        "minDelayMs": 800,
+        "maxDelayMs": 2200
+      }
     },
     {
       "id": "2026-08-19-sort-rainbow",
@@ -115,8 +190,13 @@
       "template": "sort",
       "name": "虹色ならべ",
       "description": "赤から紫まで、虹の順番に色名を並べ替えよう。",
-      "tags": ["パズル", "色"],
-      "config": { "preset": "rainbow" }
+      "tags": [
+        "パズル",
+        "色"
+      ],
+      "config": {
+        "preset": "rainbow"
+      }
     },
     {
       "id": "2026-08-20-memory-space",
@@ -124,8 +204,14 @@
       "template": "memory",
       "name": "宇宙神経衰弱",
       "description": "ロケットや星のカードで遊ぶ宇宙テーマの神経衰弱です。",
-      "tags": ["パズル", "宇宙"],
-      "config": { "pairs": 8, "theme": "space" }
+      "tags": [
+        "パズル",
+        "宇宙"
+      ],
+      "config": {
+        "pairs": 8,
+        "theme": "space"
+      }
     },
     {
       "id": "2026-08-21-quiz-truefalse",
@@ -133,8 +219,14 @@
       "template": "quiz",
       "name": "〇×クイズ",
       "description": "正しいか間違いか、素早く判断する〇×クイズです。",
-      "tags": ["クイズ", "〇×"],
-      "config": { "topic": "truefalse", "count": 5 }
+      "tags": [
+        "クイズ",
+        "〇×"
+      ],
+      "config": {
+        "topic": "truefalse",
+        "count": 5
+      }
     },
     {
       "id": "2026-08-22-clicker-20",
@@ -142,8 +234,15 @@
       "template": "clicker",
       "name": "20秒耐久タップ",
       "description": "20秒間タップし続けてハイスコアを狙う耐久チャレンジです。",
-      "tags": ["反射", "耐久"],
-      "config": { "durationSec": 20, "buttonLabel": "タップ！", "goal": 55 }
+      "tags": [
+        "反射",
+        "耐久"
+      ],
+      "config": {
+        "durationSec": 20,
+        "buttonLabel": "タップ！",
+        "goal": 55
+      }
     },
     {
       "id": "2026-08-23-sort-size",
@@ -151,8 +250,13 @@
       "template": "sort",
       "name": "大きさならべ",
       "description": "小さな生き物から大きな生き物へ、サイズ順に並べよう。",
-      "tags": ["パズル", "どうぶつ"],
-      "config": { "preset": "size" }
+      "tags": [
+        "パズル",
+        "どうぶつ"
+      ],
+      "config": {
+        "preset": "size"
+      }
     },
     {
       "id": "2026-08-24-memory-easy",
@@ -160,8 +264,14 @@
       "template": "memory",
       "name": "かんたん神経衰弱",
       "description": "ペア数少なめ。はじめてでもすぐ遊べる入門神経衰弱です。",
-      "tags": ["パズル", "かんたん"],
-      "config": { "pairs": 4, "theme": "default" }
+      "tags": [
+        "パズル",
+        "かんたん"
+      ],
+      "config": {
+        "pairs": 4,
+        "theme": "default"
+      }
     },
     {
       "id": "2026-08-25-quiz-japan-short",
@@ -169,8 +279,14 @@
       "template": "quiz",
       "name": "日本クイズ3問",
       "description": "3問だけの超短クイズ。待ち時間にちょうどいいボリュームです。",
-      "tags": ["クイズ", "短時間"],
-      "config": { "topic": "japan", "count": 3 }
+      "tags": [
+        "クイズ",
+        "短時間"
+      ],
+      "config": {
+        "topic": "japan",
+        "count": 3
+      }
     },
     {
       "id": "2026-08-26-reaction-slow",
@@ -178,8 +294,14 @@
       "template": "reaction",
       "name": "じっくり反応",
       "description": "待ち時間が長め。焦らず、緑を待ってからタップしよう。",
-      "tags": ["反射", "リラックス"],
-      "config": { "minDelayMs": 1500, "maxDelayMs": 4500 }
+      "tags": [
+        "反射",
+        "リラックス"
+      ],
+      "config": {
+        "minDelayMs": 1500,
+        "maxDelayMs": 4500
+      }
     },
     {
       "id": "2026-08-27-sort-morning",
@@ -187,8 +309,13 @@
       "template": "sort",
       "name": "朝のしたくならべ",
       "description": "朝の行動を正しい順番に並べる生活ルーティンパズルです。",
-      "tags": ["パズル", "生活"],
-      "config": { "preset": "steps" }
+      "tags": [
+        "パズル",
+        "生活"
+      ],
+      "config": {
+        "preset": "steps"
+      }
     },
     {
       "id": "2026-08-28-clicker-goal50",
@@ -196,8 +323,15 @@
       "template": "clicker",
       "name": "目標50タップ",
       "description": "15秒で50回を目指す目標付きタップチャレンジです。",
-      "tags": ["反射", "目標"],
-      "config": { "durationSec": 15, "buttonLabel": "GO!", "goal": 50 }
+      "tags": [
+        "反射",
+        "目標"
+      ],
+      "config": {
+        "durationSec": 15,
+        "buttonLabel": "GO!",
+        "goal": 50
+      }
     },
     {
       "id": "2026-08-29-memory-fruits-hard",
@@ -205,8 +339,14 @@
       "template": "memory",
       "name": "フルーツ神経衰弱HARD",
       "description": "ペア多めのフルーツ神経衰弱。記憶力に自信がある人向けです。",
-      "tags": ["パズル", "むずかしい"],
-      "config": { "pairs": 10, "theme": "fruits" }
+      "tags": [
+        "パズル",
+        "むずかしい"
+      ],
+      "config": {
+        "pairs": 10,
+        "theme": "fruits"
+      }
     },
     {
       "id": "2026-08-30-quiz-animals-short",
@@ -214,8 +354,14 @@
       "template": "quiz",
       "name": "どうぶつクイズ3問",
       "description": "どうぶつテーマの短いクイズ。サクッと遊べます。",
-      "tags": ["クイズ", "どうぶつ"],
-      "config": { "topic": "animals", "count": 3 }
+      "tags": [
+        "クイズ",
+        "どうぶつ"
+      ],
+      "config": {
+        "topic": "animals",
+        "count": 3
+      }
     },
     {
       "id": "2026-08-31-sort-custom-seasons",
@@ -223,8 +369,18 @@
       "template": "sort",
       "name": "四季ならべ",
       "description": "春・夏・秋・冬を正しい順番に並べるかんたんパズルです。",
-      "tags": ["パズル", "季節"],
-      "config": { "items": ["春", "夏", "秋", "冬"] }
+      "tags": [
+        "パズル",
+        "季節"
+      ],
+      "config": {
+        "items": [
+          "春",
+          "夏",
+          "秋",
+          "冬"
+        ]
+      }
     },
     {
       "id": "2026-09-01-reaction-pro",
@@ -232,8 +388,14 @@
       "template": "reaction",
       "name": "反応速度PRO",
       "description": "ベストタイム更新を目指す反応速度チャレンジです。",
-      "tags": ["反射", "スコアアタック"],
-      "config": { "minDelayMs": 900, "maxDelayMs": 2800 }
+      "tags": [
+        "反射",
+        "スコアアタック"
+      ],
+      "config": {
+        "minDelayMs": 900,
+        "maxDelayMs": 2800
+      }
     },
     {
       "id": "2026-09-02-memory-animals-hard",
@@ -241,8 +403,14 @@
       "template": "memory",
       "name": "どうぶつ神経衰弱HARD",
       "description": "カード多めのどうぶつ神経衰弱。集中力が試されます。",
-      "tags": ["パズル", "むずかしい"],
-      "config": { "pairs": 10, "theme": "animals" }
+      "tags": [
+        "パズル",
+        "むずかしい"
+      ],
+      "config": {
+        "pairs": 10,
+        "theme": "animals"
+      }
     },
     {
       "id": "2026-09-03-quiz-food-short",
@@ -250,8 +418,14 @@
       "template": "quiz",
       "name": "たべものクイズ3問",
       "description": "食べ物テーマの3問クイズ。お腹が空くかも？",
-      "tags": ["クイズ", "食べ物"],
-      "config": { "topic": "food", "count": 3 }
+      "tags": [
+        "クイズ",
+        "食べ物"
+      ],
+      "config": {
+        "topic": "food",
+        "count": 3
+      }
     },
     {
       "id": "2026-09-04-clicker-30",
@@ -259,8 +433,15 @@
       "template": "clicker",
       "name": "30秒タップマラソン",
       "description": "30秒間タップし続ける長めのスコアアタックです。",
-      "tags": ["反射", "耐久"],
-      "config": { "durationSec": 30, "buttonLabel": "タップ！", "goal": 80 }
+      "tags": [
+        "反射",
+        "耐久"
+      ],
+      "config": {
+        "durationSec": 30,
+        "buttonLabel": "タップ！",
+        "goal": 80
+      }
     },
     {
       "id": "2026-09-05-sort-numbers-easy",
@@ -268,8 +449,14 @@
       "template": "sort",
       "name": "数字ならべ1〜5",
       "description": "1から5までを順番に並べる入門パズルです。",
-      "tags": ["パズル", "かんたん"],
-      "config": { "preset": "numbers", "count": 5 }
+      "tags": [
+        "パズル",
+        "かんたん"
+      ],
+      "config": {
+        "preset": "numbers",
+        "count": 5
+      }
     }
   ]
 }

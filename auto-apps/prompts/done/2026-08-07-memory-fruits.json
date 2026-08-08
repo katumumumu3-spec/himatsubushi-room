@@ -1,0 +1,17 @@
+{
+  "id": "2026-08-07-memory-fruits",
+  "slug": "2026-08-07-memory-fruits",
+  "template": "memory",
+  "name": "フルーツ神経衰弱",
+  "description": "同じフルーツを見つけてペアを揃えよう。スキマ時間向けの簡単神経衰弱です。",
+  "tags": [
+    "パズル",
+    "神経衰弱"
+  ],
+  "searchText": "フルーツ神経衰弱 同じフルーツを見つけてペアを揃えよう。スキマ時間向けの簡単神経衰弱です。 パズル 神経衰弱",
+  "generatedAt": "2026-08-08T13:58:15.491Z",
+  "config": {
+    "pairs": 8,
+    "theme": "fruits"
+  }
+}
