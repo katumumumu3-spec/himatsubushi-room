@@ -1,0 +1,116 @@
+name: Daily auto app
+
+on:
+  schedule:
+    # Every day at 01:00 UTC = 10:00 JST
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: daily-auto-app
+  cancel-in-progress: false
+
+jobs:
+  generate-and-register:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: auto-apps
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: auto-apps/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+
+      - name: Validate queue
+        run: npm run validate-queue
+
+      - name: Generate next app
+        id: generate
+        run: |
+          set -o pipefail
+          OUTPUT=$(node scripts/generate.mjs)
+          echo "$OUTPUT"
+          if echo "$OUTPUT" | grep -q '"skipped": true'; then
+            echo "skipped=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skipped=false" >> "$GITHUB_OUTPUT"
+            SLUG=$(node -e "const fs=require('fs'); const q=JSON.parse(fs.readFileSync('prompts/queue.json','utf8')); const i=q.items.find(x=>x.status==='generated'); if(!i) process.exit(1); process.stdout.write(i.slug)")
+            echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit generated app
+        if: steps.generate.outputs.skipped != 'true'
+        working-directory: .
+        run: |
+          git config user.name "himatsubushi-bot"
+          git config user.email "bot@himatsubushiroom.com"
+          git add auto-apps/apps auto-apps/prompts
+          if git diff --staged --quiet; then
+            echo "No files to commit"
+          else
+            git commit -m "chore(auto-apps): generate ${{ steps.generate.outputs.slug }}"
+            git push
+          fi
+
+      - name: Wait for Netlify publish and register
+        if: steps.generate.outputs.skipped != 'true'
+        env:
+          APPS_BASE_URL: ${{ vars.APPS_BASE_URL }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          PUBLISH_WAIT_SECONDS: "240"
+          DAILY_MODE: register
+        run: |
+          export APPS_BASE_URL="${APPS_BASE_URL:-https://apps.himatsubushiroom.com}"
+          node scripts/run-daily.mjs
+
+      - name: Commit registration status
+        if: steps.generate.outputs.skipped != 'true'
+        working-directory: .
+        run: |
+          git config user.name "himatsubushi-bot"
+          git config user.email "bot@himatsubushiroom.com"
+          git add auto-apps/prompts
+          if git diff --staged --quiet; then
+            echo "No queue changes"
+          else
+            git commit -m "chore(auto-apps): register ${{ steps.generate.outputs.slug }}"
+            git push
+          fi
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `自動アプリ生成に失敗しました (${new Date().toISOString().slice(0,10)})`;
+            const body = [
+              '日次ジョブが失敗しました。',
+              '',
+              `- workflow: ${context.workflow}`,
+              `- run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              '',
+              'auto-apps/prompts/queue.json の status と Actions ログを確認してください。'
+            ].join('\n');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body
+            });

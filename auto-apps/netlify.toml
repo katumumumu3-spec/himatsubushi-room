@@ -1,0 +1,19 @@
+[build]
+  publish = "."
+  command = "echo Static apps host"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/apps/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+
+[[redirects]]
+  from = "/apps"
+  to = "/"
+  status = 302

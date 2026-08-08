@@ -1,0 +1,19 @@
+{
+  "name": "himatsubushi-auto-apps",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Daily template-based mini app generator for ひまつぶしルーム",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "register": "node scripts/register.mjs",
+    "daily": "node scripts/run-daily.mjs",
+    "validate-queue": "node scripts/validate-queue.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.4.0"
+  }
+}
