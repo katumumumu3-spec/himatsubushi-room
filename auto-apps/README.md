@@ -107,6 +107,81 @@ node scripts/run-daily.mjs
 5. Firestore 登録（`status: done`）
 6. queue 更新を commit
 
+## 忍者AdMax広告
+
+自動生成アプリには、画面下部に忍者AdMaxバナーを埋め込みます。
+
+設定ファイル: [`config/admax.json`](config/admax.json)
+
+```json
+{
+  "bannerBottomId": "広告ID（32文字）",
+  "bannerResultId": "（予備）"
+}
+```
+
+- 今後生成されるアプリは、このIDが自動で入ります
+- すでに生成済みのアプリへ後付けする場合:
+
+```bash
+cd auto-apps
+npm run patch-admax
+```
+
+その後 commit & push すると Netlify に反映されます。
+
+## 毎日自動で何が起きるか
+
+日本時間 10:00 ごろ（GitHub Actions）:
+
+1. `prompts/queue.json` から `pending` を1件取得
+2. 対応テンプレで `apps/{slug}/index.html` を生成（広告込み）
+3. GitHubへ commit & push
+4. Netlify（`apps.himatsubushiroom.com`）が自動デプロイ
+5. 公開URLの疎通確認
+6. Firebase（ひまつぶしルーム）へアプリ登録
+7. queue の該当件を `done` に更新
+
+あなたが毎日やる作業はありません。
+
+## アプリを増やす方法（運用）
+
+### A. いちばん簡単（推奨）
+`auto-apps/prompts/queue.json` の `items` 配列に、新しい pending を追加して push する。
+
+例:
+
+```json
+{
+  "id": "2026-09-20-memory-space2",
+  "status": "pending",
+  "template": "memory",
+  "name": "宇宙神経衰弱2",
+  "description": "星とロケットの神経衰弱です。",
+  "tags": ["パズル", "宇宙"],
+  "config": { "pairs": 8, "theme": "space" }
+}
+```
+
+ポイント:
+- `id` は重複させない（英数字とハイフン）
+- `status` は必ず `"pending"`
+- 1日1本処理なので、30件まとめ置きで約1か月分になる
+
+### B. 今すぐ1本作りたい
+GitHub → Actions → **Daily auto app** → **Run workflow**
+
+### C. 週次の点検（あなた担当）
+1. https://himatsubushiroom.com/admin.html を開く
+2. 自動追加されたアプリを遊ぶ
+3. 不要なら削除
+4. 広告が出ているかもざっと確認
+
+### D. 失敗したとき
+- GitHub に Issue が自動作成される
+- `queue.json` で `failed` になっている件を `pending` に戻す
+- Actions を再実行
+
 ## プロンプトの書き方
 
 `prompts/queue.json` に追加:
@@ -131,12 +206,6 @@ node scripts/run-daily.mjs
 - **reaction**: `minDelayMs`, `maxDelayMs`
 - **sort**: `preset` (`numbers|week|rainbow|size|steps`) または `items`, `count`
 
-## 運用
-
-- 週1で [管理画面](https://himatsubushiroom.com/admin.html) を点検し、不要アプリを削除
-- pending が尽きたら queue に追加
-- 失敗時は Issue と `status: failed` を確認し、必要なら `pending` に戻して再実行
-
 ## コスト目安
 
 テンプレ方式のため LLM 課金なし。GitHub Actions / Netlify 無料枠内なら **月0〜500円程度** が目安です。
@@ -145,3 +214,4 @@ node scripts/run-daily.mjs
 
 - 自動量産しすぎると内容が似てSEO的に不利になることがあります。まずは1日1本を維持してください。
 - `service-account.json` は絶対に commit しないでください。
+- AdMaxの広告IDは公開HTMLに入ります（他アプリと同様）。IDのローテーションは `config/admax.json` を更新してから `npm run patch-admax` で既存反映できます。

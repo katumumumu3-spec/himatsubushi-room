@@ -1,12 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildAdmaxSlotHtml } from "./admax-snippet.mjs";
 import {
   ROOT,
   appDir,
   loadQueue,
   normalizeSearchText,
   pickNextPending,
+  readJson,
   renderTemplate,
   saveQueue,
   slugify,
@@ -18,6 +20,12 @@ function buildSlug(item) {
   if (item.slug) return slugify(item.slug);
   if (item.id) return slugify(item.id);
   return slugify(item.name);
+}
+
+function loadAdmaxConfig() {
+  const file = path.join(ROOT, "config", "admax.json");
+  if (!fs.existsSync(file)) return { bannerBottomId: "" };
+  return readJson(file);
 }
 
 export function generateNextApp({ dryRun = false } = {}) {
@@ -36,6 +44,7 @@ export function generateNextApp({ dryRun = false } = {}) {
   const targetDir = appDir(slug);
   const html = fs.readFileSync(templateFile, "utf8");
   const config = item.config || {};
+  const admax = loadAdmaxConfig();
   const rendered = renderTemplate(html, {
     TITLE: item.name,
     DESCRIPTION: item.description,
@@ -43,6 +52,7 @@ export function generateNextApp({ dryRun = false } = {}) {
     CONFIG_JSON: JSON.stringify(config).replace(/</g, "\\u003c"),
     TEMPLATE_ID: item.template,
     SLUG: slug,
+    ADMAX_SLOT: buildAdmaxSlotHtml(admax.bannerBottomId),
   });
 
   const meta = {
