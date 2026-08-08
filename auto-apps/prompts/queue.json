@@ -23,7 +23,7 @@
     },
     {
       "id": "2026-08-08-quiz-japan",
-      "status": "generated",
+      "status": "done",
       "template": "quiz",
       "name": "日本のクイズ5問",
       "description": "日本にまつわるかんたんクイズ。通勤・休憩の暇つぶしにどうぞ。",
@@ -36,7 +36,10 @@
         "count": 5
       },
       "slug": "2026-08-08-quiz-japan",
-      "generatedAt": "2026-08-08T14:13:00.718Z"
+      "generatedAt": "2026-08-08T14:13:00.718Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-08-quiz-japan/",
+      "firestoreId": "Yq8Lt5JNB2cuEqndbvLP",
+      "registeredAt": "2026-08-08T14:13:12.416Z"
     },
     {
       "id": "2026-08-09-clicker-15",
