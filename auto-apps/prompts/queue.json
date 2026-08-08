@@ -3,7 +3,7 @@
   "items": [
     {
       "id": "2026-08-07-memory-fruits",
-      "status": "generated",
+      "status": "done",
       "template": "memory",
       "name": "フルーツ神経衰弱",
       "description": "同じフルーツを見つけてペアを揃えよう。スキマ時間向けの簡単神経衰弱です。",
@@ -16,7 +16,10 @@
         "theme": "fruits"
       },
       "slug": "2026-08-07-memory-fruits",
-      "generatedAt": "2026-08-08T13:58:15.491Z"
+      "generatedAt": "2026-08-08T13:58:15.491Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-07-memory-fruits/",
+      "firestoreId": "yyyOiugkNSVE0876fsiR",
+      "registeredAt": "2026-08-08T13:58:35.463Z"
     },
     {
       "id": "2026-08-08-quiz-japan",
