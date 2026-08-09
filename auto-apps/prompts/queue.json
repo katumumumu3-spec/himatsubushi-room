@@ -43,7 +43,7 @@
     },
     {
       "id": "2026-08-09-clicker-15",
-      "status": "generated",
+      "status": "done",
       "template": "clicker",
       "name": "15秒タップチャレンジ",
       "description": "制限時間15秒で何回タップできるか挑戦するシンプルゲームです。",
@@ -57,7 +57,10 @@
         "goal": 40
       },
       "slug": "2026-08-09-clicker-15",
-      "generatedAt": "2026-08-09T04:51:16.279Z"
+      "generatedAt": "2026-08-09T04:51:16.279Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-09-clicker-15/",
+      "firestoreId": "Lgz09Z68TpaQSmcBJTd9",
+      "registeredAt": "2026-08-09T04:51:36.511Z"
     },
     {
       "id": "2026-08-10-reaction-basic",
