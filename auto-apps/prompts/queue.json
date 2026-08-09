@@ -43,7 +43,7 @@
     },
     {
       "id": "2026-08-09-clicker-15",
-      "status": "pending",
+      "status": "generated",
       "template": "clicker",
       "name": "15秒タップチャレンジ",
       "description": "制限時間15秒で何回タップできるか挑戦するシンプルゲームです。",
@@ -55,7 +55,9 @@
         "durationSec": 15,
         "buttonLabel": "タップ！",
         "goal": 40
-      }
+      },
+      "slug": "2026-08-09-clicker-15",
+      "generatedAt": "2026-08-09T04:51:16.279Z"
     },
     {
       "id": "2026-08-10-reaction-basic",
