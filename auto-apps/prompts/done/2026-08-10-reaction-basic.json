@@ -1,0 +1,17 @@
+{
+  "id": "2026-08-10-reaction-basic",
+  "slug": "2026-08-10-reaction-basic",
+  "template": "reaction",
+  "name": "緑で反応せよ",
+  "description": "画面が緑になった瞬間にタップ。反応速度を測るミニゲームです。",
+  "tags": [
+    "反射",
+    "計測"
+  ],
+  "searchText": "緑で反応せよ 画面が緑になった瞬間にタップ。反応速度を測るミニゲームです。 反射 計測",
+  "generatedAt": "2026-08-10T06:00:44.143Z",
+  "config": {
+    "minDelayMs": 1000,
+    "maxDelayMs": 3200
+  }
+}
