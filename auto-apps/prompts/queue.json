@@ -84,7 +84,7 @@
     },
     {
       "id": "2026-08-11-sort-week",
-      "status": "pending",
+      "status": "generated",
       "template": "sort",
       "name": "曜日ならべ",
       "description": "バラバラの曜日カードを、正しい順番に並べ替えよう。",
@@ -94,7 +94,9 @@
       ],
       "config": {
         "preset": "week"
-      }
+      },
+      "slug": "2026-08-11-sort-week",
+      "generatedAt": "2026-08-11T04:55:19.521Z"
     },
     {
       "id": "2026-08-12-memory-animals",
