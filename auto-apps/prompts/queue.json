@@ -84,7 +84,7 @@
     },
     {
       "id": "2026-08-11-sort-week",
-      "status": "generated",
+      "status": "done",
       "template": "sort",
       "name": "曜日ならべ",
       "description": "バラバラの曜日カードを、正しい順番に並べ替えよう。",
@@ -96,7 +96,10 @@
         "preset": "week"
       },
       "slug": "2026-08-11-sort-week",
-      "generatedAt": "2026-08-11T04:55:19.521Z"
+      "generatedAt": "2026-08-11T04:55:19.521Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-11-sort-week/",
+      "firestoreId": "RYRE8bquJIYD4cTkfZwU",
+      "registeredAt": "2026-08-11T04:55:39.360Z"
     },
     {
       "id": "2026-08-12-memory-animals",
