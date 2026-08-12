@@ -103,7 +103,7 @@
     },
     {
       "id": "2026-08-12-memory-animals",
-      "status": "pending",
+      "status": "generated",
       "template": "memory",
       "name": "どうぶつ神経衰弱",
       "description": "かわいいどうぶつカードで神経衰弱。記憶力チェックにぴったりです。",
@@ -114,7 +114,9 @@
       "config": {
         "pairs": 6,
         "theme": "animals"
-      }
+      },
+      "slug": "2026-08-12-memory-animals",
+      "generatedAt": "2026-08-12T06:04:28.431Z"
     },
     {
       "id": "2026-08-13-quiz-animals",
