@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>どうぶつクイズ</title>
+  <meta name="description" content="動物の知識を試すかんたん4択クイズです。" />
+  <style>
+    :root { --ink:#263044; --coral:#ff6b6b; --mint:#58d6b0; --paper:#fffaf1; --blue:#5b8def; }
+    body { margin:0; min-height:100vh; font-family:"Segoe UI","Hiragino Sans",sans-serif; color:var(--ink); background:linear-gradient(160deg,#e8f1ff,var(--paper)); }
+    .wrap { width:min(560px,calc(100% - 24px)); margin:0 auto; padding:24px 0 40px; }
+    h1 { margin:0 0 8px; font-size:1.4rem; }
+    .lead,.meta { color:#667085; line-height:1.6; }
+    .card { margin-top:16px; padding:18px; background:#fff; border:2px solid var(--ink); border-radius:18px; box-shadow:5px 6px 0 var(--ink); }
+    .q { font-size:1.15rem; font-weight:800; margin:0 0 14px; }
+    .choices { display:grid; gap:10px; }
+    .choices button { text-align:left; padding:12px 14px; border:2px solid #d7deea; border-radius:12px; background:#f7faff; font-weight:700; cursor:pointer; }
+    .choices button:hover { border-color:var(--blue); }
+    .choices button.is-correct { background:#e7faf4; border-color:var(--mint); }
+    .choices button.is-wrong { background:#fff0f1; border-color:var(--coral); }
+    .bar { display:flex; justify-content:space-between; gap:10px; margin-top:12px; font-weight:800; }
+    .room { display:inline-block; margin-top:18px; color:var(--coral); font-weight:800; }
+    #next { margin-top:12px; display:none; border:0; background:var(--coral); color:#fff; border-radius:12px; padding:10px 16px; font-weight:800; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>どうぶつクイズ</h1>
+    <p class="lead">動物の知識を試すかんたん4択クイズです。</p>
+    <p class="meta">問題 <span id=" Progressive">1</span> / <span id="total">0</span>　スコア <span id="score">0</span></p>
+    <div class="card">
+      <p class="q" id="question">...</p>
+      <div class="choices" id="choices"></div>
+      <button type="button" id="next">次の問題へ</button>
+    </div>
+    <style>
+  .ad-slot-wrap{margin:18px 0 8px;text-align:center}
+  .ad-slot-wrap .ad-label{margin:0 0 6px;color:#667085;font-size:.75rem;font-weight:700}
+  .ad-slot{min-height:50px}
+</style>
+<aside class="ad-slot-wrap" aria-label="スポンサー">
+  <p class="ad-label">スポンサー</p>
+  <div class="ad-slot" id="admaxBottom"></div>
+</aside>
+<script>
+(function () {
+  var admaxId = "b9edd449a024966b9a7fcfb7435c5378";
+  var el = document.getElementById("admaxBottom");
+  if (!el || !admaxId) return;
+  var iframe = document.createElement("iframe");
+  iframe.title = "advertisement";
+  iframe.setAttribute("scrolling", "no");
+  iframe.setAttribute("frameborder", "0");
+  iframe.style.cssText = "display:block;width:100%;max-width:320px;height:100px;border:0;margin:0 auto;overflow:hidden;";
+  iframe.srcdoc = '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:0;text-align:center;background:transparent;"><script src="https://adm.shinobi.jp/s/' + admaxId + '"><\/script></body></html>';
+  el.appendChild(iframe);
+})();
+</script>
+    <a class="room" href="https://himatsubushiroom.com/" target="_blank" rel="noopener">もっと遊ぶ → ひまつぶしルーム</a>
+  </div>
+  <script>
+    const CONFIG = {"topic":"animals","count":5};
+    const BANK = {
+      japan: [
+        { q: "日本の首都は？", choices: ["大阪","東京","名古屋","福岡"], answer: 1 },
+        { q: "富士山があるのはどの地方？", choices: ["北海道","中部","四国","沖縄"], answer: 1 },
+        { q: "桜の季節はだいたいいつ？", choices: ["夏","秋","春","真冬"], answer: 2 },
+        { q: "新幹線で有名なのは？", choices: ["のぞみ","タクシー","フェリー","ロープウェイ"], answer: 0 },
+        { q: "おにぎりに使われる主な食材は？", choices: ["パン","ごはん","麺","芋"], answer: 1 }
+      ],
+      animals: [
+        { q: "犬の鳴き声は？", choices: ["ニャー","ワン","モー","チュー"], answer: 1 },
+        { q: "空を飛ぶ哺乳類は？", choices: ["コウモリ","ペンギン","カエル","金魚"], answer: 0 },
+        { q: "パンダの主食は？", choices: ["竹","肉","パン","魚"], answer: 0 },
+        { q: "一番大きい陸の動物は？", choices: ["ライオン","ゾウ","ウサギ","ネコ"], answer: 1 },
+        { q: "夜行性なのは？", choices: ["ふくろう","スズメ","ニワトリ","ハト"], answer: 0 }
+      ],
+      food: [
+        { q: "寿司の主なご飯は？", choices: ["白米","そば","うどん","パン"], answer: 0 },
+        { q: "カレーによく入れる野菜は？", choices: ["バナナ","じゃがいも","スイカ","カカオ"], answer: 1 },
+        { q: "味噌汁の基本は？", choices: ["味噌","ケチャップ","マヨネーズ","シロップ"], answer: 0 },
+        { q: "ラーメンの汁を何と呼ぶ？", choices: ["スープ","サラダ","ソース","スムージー"], answer: 0 },
+        { q: "甘いお菓子はどれ？", choices: ["塩辛","ケーキ","梅干し","ワサビ"], answer: 1 }
+      ],
+      truefalse: [
+        { q: "地球は丸い（楕円に近い）", choices: ["〇","×"], answer: 0 },
+        { q: "1分は60秒", choices: ["〇","×"], answer: 0 },
+        { q: "太陽は地球の周りを回っている", choices: ["〇","×"], answer: 1 },
+        { q: "水は0℃で凍る（標準気圧）", choices: ["〇","×"], answer: 0 },
+        { q: "人間は魚類である", choices: ["〇","×"], answer: 1 }
+      ]
+    };
+    const custom = Array.isArray(CONFIG.questions) ? CONFIG.questions : null;
+    const topic = CONFIG.topic || "japan";
+    let questions = custom || BANK[topic] || BANK.japan;
+    const count = Math.min(Math.max(Number(CONFIG.count) || questions.length, 3), questions.length);
+    questions = questions.slice(0, count);
+    let index = 0, score = 0, answered = false;
+    const qEl = document.getElementById("question");
+    const choicesEl = document.getElementById("choices");
+    const nextBtn = document.getElementById("next");
+    document.getElementById("total").textContent = String(questions.length);
+
+    function render() {
+      answered = false;
+      nextBtn.style.display = "none";
+      const item = questions[index];
+      document.getElementById("progress").textContent = String(index + 1);
+      document.getElementById("score").textContent = String(score);
+      qEl.textContent = item.q;
+      choicesEl.innerHTML = "";
+      item.choices.forEach((label, i) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = label;
+        btn.addEventListener("click", () => choose(i, btn));
+        choicesEl.appendChild(btn);
+      });
+    }
+
+    function choose(i, btn) {
+      if (answered) return;
+      answered = true;
+      const item = questions[index];
+      [...choicesEl.children].forEach((el, idx) => {
+        if (idx === item.answer) el.classList.add("is-correct");
+      });
+      if (i === item.answer) score += 1;
+      else btn.classList.add("is-wrong");
+      document.getElementById("score").textContent = String(score);
+      nextBtn.style.display = "inline-block";
+      nextBtn.textContent = index + 1 >= questions.length ? "結果を見る" : "次の問題へ";
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (index + 1 >= questions.length) {
+        qEl.textContent = `終了！ ${score} / ${questions.length} 点`;
+        choicesEl.innerHTML = "";
+        nextBtn.style.display = "none";
+        return;
+      }
+      index += 1;
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

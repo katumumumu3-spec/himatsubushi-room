@@ -1,0 +1,17 @@
+{
+  "id": "2026-08-13-quiz-animals",
+  "slug": "2026-08-13-quiz-animals",
+  "template": "quiz",
+  "name": "どうぶつクイズ",
+  "description": "動物の知識を試すかんたん4択クイズです。",
+  "tags": [
+    "クイズ",
+    "どうぶつ"
+  ],
+  "searchText": "どうぶつクイズ 動物の知識を試すかんたん4択クイズです。 クイズ どうぶつ",
+  "generatedAt": "2026-08-13T06:05:43.393Z",
+  "config": {
+    "topic": "animals",
+    "count": 5
+  }
+}
