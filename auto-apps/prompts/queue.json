@@ -143,7 +143,7 @@
     },
     {
       "id": "2026-08-14-clicker-10",
-      "status": "generated",
+      "status": "done",
       "template": "clicker",
       "name": "10秒連打",
       "description": "たった10秒。連打力だけで勝負する超短時間ゲームです。",
@@ -157,7 +157,10 @@
         "goal": 30
       },
       "slug": "2026-08-14-clicker-10",
-      "generatedAt": "2026-08-14T06:04:29.250Z"
+      "generatedAt": "2026-08-14T06:04:29.250Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-14-clicker-10/",
+      "firestoreId": "4xuxeyiXSUAMtCN8dKTP",
+      "registeredAt": "2026-08-14T06:04:57.026Z"
     },
     {
       "id": "2026-08-15-sort-numbers",
