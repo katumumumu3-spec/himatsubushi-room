@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>10秒連打</title>
+  <meta name="description" content="たった10秒。連打力だけで勝負する超短時間ゲームです。" />
+  <style>
+    :root { --ink:#263044; --coral:#ff6b6b; --yellow:#ffd166; --paper:#fffaf1; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; font-family:"Segoe UI","Hiragino Sans",sans-serif; color:var(--ink); background:radial-gradient(circle at 80% 10%,#ffd9d9,var(--paper)); }
+    .wrap { width:min(420px,calc(100% - 24px)); text-align:center; }
+    h1 { margin:0 0 8px; font-size:1.4rem; }
+    .lead { color:#667085; line-height:1.6; }
+    .stats { display:flex; justify-content:center; gap:18px; margin:16px 0; font-weight:800; }
+    #tap {
+      width:min(260px,70vw); height:min(260px,70vw); border-radius:50%; border:4px solid var(--ink);
+      background:linear-gradient(145deg,var(--coral),#ff9f43); color:#fff; font-size:1.4rem; font-weight:900;
+      box-shadow:0 12px 0 #c94b4b; cursor:pointer;
+    }
+    #tap:active { transform:translateY(6px); box-shadow:0 6px 0 #c94b4b; }
+    button.secondary { margin-top:14px; border:2px solid var(--ink); border-radius:12px; background:var(--yellow); font-weight:800; padding:8px 14px; cursor:pointer; }
+    .room { display:inline-block; margin-top:18px; color:var(--coral); font-weight:800; }
+    #status { min-height:1.4em; font-weight:800; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>10秒連打</h1>
+    <p class="lead">たった10秒。連打力だけで勝負する超短時間ゲームです。</p>
+    <div class="stats">
+      <span>スコア <strong id="score">0</strong></span>
+      <span>残り <strong id="time">0</strong>秒</span>
+    </div>
+    <button type="button" id="tap">START</button>
+    <div id="status"></div>
+    <button type="button" class="secondary" id="restart">もう一度</button>
+    <style>
+  .ad-slot-wrap{margin:18px 0 8px;text-align:center}
+  .ad-slot-wrap .ad-label{margin:0 0 6px;color:#667085;font-size:.75rem;font-weight:700}
+  .ad-slot{min-height:50px}
+</style>
+<aside class="ad-slot-wrap" aria-label="スポンサー">
+  <p class="ad-label">スポンサー</p>
+  <div class="ad-slot" id="admaxBottom"></div>
+</aside>
+<script>
+(function () {
+  var admaxId = "b9edd449a024966b9a7fcfb7435c5378";
+  var el = document.getElementById("admaxBottom");
+  if (!el || !admaxId) return;
+  var iframe = document.createElement("iframe");
+  iframe.title = "advertisement";
+  iframe.setAttribute("scrolling", "no");
+  iframe.setAttribute("frameborder", "0");
+  iframe.style.cssText = "display:block;width:100%;max-width:320px;height:100px;border:0;margin:0 auto;overflow:hidden;";
+  iframe.srcdoc = '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:0;text-align:center;background:transparent;"><script src="https://adm.shinobi.jp/s/' + admaxId + '"><\/script></body></html>';
+  el.appendChild(iframe);
+})();
+</script>
+    <div><a class="room" href="https://himatsubushiroom.com/" target="_blank" rel="noopener">もっと遊ぶ → ひまつぶしルーム</a></div>
+  </div>
+  <script>
+    const CONFIG = {"durationSec":10,"buttonLabel":"連打！","goal":30};
+    const duration = Math.min(Math.max(Number(CONFIG.durationSec) || 15, 8), 60);
+    const label = CONFIG.buttonLabel || "タップ！";
+    const goal = Number(CONFIG.goal) || 0;
+    let score = 0, left = duration, timer = null, running = false;
+    const scoreEl = document.getElementById("score");
+    const timeEl = document.getElementById("time");
+    const tap = document.getElementById("tap");
+    const status = document.getElementById("status");
+    timeEl.textContent = String(duration);
+
+    function end() {
+      running = false;
+      clearInterval(timer);
+      timer = null;
+      tap.textContent = "終了";
+      status.textContent = goal > 0
+        ? (score >= goal ? `目標達成！ ${score} 回` : `おしい… ${score} / ${goal}`)
+        : `結果: ${score} 回`;
+    }
+
+    function tick() {
+      left -= 1;
+      timeEl.textContent = String(left);
+      if (left <= 0) end();
+    }
+
+    function start() {
+      score = 0; left = duration; running = true;
+      scoreEl.textContent = "0";
+      timeEl.textContent = String(duration);
+      status.textContent = "";
+      tap.textContent = label;
+      clearInterval(timer);
+      timer = setInterval(tick, 1000);
+    }
+
+    tap.addEventListener("click", () => {
+      if (!running) { start(); score = 1; scoreEl.textContent = "1"; return; }
+      score += 1;
+      scoreEl.textContent = String(score);
+    });
+    document.getElementById("restart").addEventListener("click", () => {
+      clearInterval(timer); running = false; tap.textContent = "START";
+      score = 0; left = duration; scoreEl.textContent = "0"; timeEl.textContent = String(duration); status.textContent = "";
+    });
+  </script>
+</body>
+</html>

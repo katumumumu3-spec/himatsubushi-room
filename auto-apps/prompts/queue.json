@@ -143,7 +143,7 @@
     },
     {
       "id": "2026-08-14-clicker-10",
-      "status": "pending",
+      "status": "generated",
       "template": "clicker",
       "name": "10秒連打",
       "description": "たった10秒。連打力だけで勝負する超短時間ゲームです。",
@@ -155,7 +155,9 @@
         "durationSec": 10,
         "buttonLabel": "連打！",
         "goal": 30
-      }
+      },
+      "slug": "2026-08-14-clicker-10",
+      "generatedAt": "2026-08-14T06:04:29.250Z"
     },
     {
       "id": "2026-08-15-sort-numbers",

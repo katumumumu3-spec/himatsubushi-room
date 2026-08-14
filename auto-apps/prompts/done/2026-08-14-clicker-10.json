@@ -1,0 +1,18 @@
+{
+  "id": "2026-08-14-clicker-10",
+  "slug": "2026-08-14-clicker-10",
+  "template": "clicker",
+  "name": "10秒連打",
+  "description": "たった10秒。連打力だけで勝負する超短時間ゲームです。",
+  "tags": [
+    "反射",
+    "短時間"
+  ],
+  "searchText": "10秒連打 たった10秒。連打力だけで勝負する超短時間ゲームです。 反射 短時間",
+  "generatedAt": "2026-08-14T06:04:29.250Z",
+  "config": {
+    "durationSec": 10,
+    "buttonLabel": "連打！",
+    "goal": 30
+  }
+}
