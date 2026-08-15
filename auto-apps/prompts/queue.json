@@ -164,7 +164,7 @@
     },
     {
       "id": "2026-08-15-sort-numbers",
-      "status": "generated",
+      "status": "done",
       "template": "sort",
       "name": "数字ならべ1〜8",
       "description": "1から8までの数字を小さい順に並べるシンプルパズルです。",
@@ -177,7 +177,10 @@
         "count": 8
       },
       "slug": "2026-08-15-sort-numbers",
-      "generatedAt": "2026-08-15T03:21:10.395Z"
+      "generatedAt": "2026-08-15T03:21:10.395Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-15-sort-numbers/",
+      "firestoreId": "DuiXeK94NM6WQyFQSzOv",
+      "registeredAt": "2026-08-15T03:21:38.807Z"
     },
     {
       "id": "2026-08-16-memory-sweets",
