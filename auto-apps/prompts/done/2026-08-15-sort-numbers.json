@@ -1,0 +1,17 @@
+{
+  "id": "2026-08-15-sort-numbers",
+  "slug": "2026-08-15-sort-numbers",
+  "template": "sort",
+  "name": "数字ならべ1〜8",
+  "description": "1から8までの数字を小さい順に並べるシンプルパズルです。",
+  "tags": [
+    "パズル",
+    "数字"
+  ],
+  "searchText": "数字ならべ1〜8 1から8までの数字を小さい順に並べるシンプルパズルです。 パズル 数字",
+  "generatedAt": "2026-08-15T03:21:10.395Z",
+  "config": {
+    "preset": "numbers",
+    "count": 8
+  }
+}

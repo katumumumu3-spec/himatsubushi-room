@@ -164,7 +164,7 @@
     },
     {
       "id": "2026-08-15-sort-numbers",
-      "status": "pending",
+      "status": "generated",
       "template": "sort",
       "name": "数字ならべ1〜8",
       "description": "1から8までの数字を小さい順に並べるシンプルパズルです。",
@@ -175,7 +175,9 @@
       "config": {
         "preset": "numbers",
         "count": 8
-      }
+      },
+      "slug": "2026-08-15-sort-numbers",
+      "generatedAt": "2026-08-15T03:21:10.395Z"
     },
     {
       "id": "2026-08-16-memory-sweets",
