@@ -184,7 +184,7 @@
     },
     {
       "id": "2026-08-16-memory-sweets",
-      "status": "pending",
+      "status": "generated",
       "template": "memory",
       "name": "スイーツ神経衰弱",
       "description": "ドーナツやケーキのカードを揃える甘い神経衰弱です。",
@@ -195,7 +195,9 @@
       "config": {
         "pairs": 8,
         "theme": "sweets"
-      }
+      },
+      "slug": "2026-08-16-memory-sweets",
+      "generatedAt": "2026-08-16T02:19:24.838Z"
     },
     {
       "id": "2026-08-17-quiz-food",
