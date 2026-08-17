@@ -204,7 +204,7 @@
     },
     {
       "id": "2026-08-17-quiz-food",
-      "status": "generated",
+      "status": "done",
       "template": "quiz",
       "name": "たべものクイズ",
       "description": "身近な食べ物に関するかんたんクイズで頭の体操を。",
@@ -217,7 +217,10 @@
         "count": 5
       },
       "slug": "2026-08-17-quiz-food",
-      "generatedAt": "2026-08-17T02:18:02.263Z"
+      "generatedAt": "2026-08-17T02:18:02.263Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-17-quiz-food/",
+      "firestoreId": "7i9qXDLDjhKuQza7QLvs",
+      "registeredAt": "2026-08-17T02:18:30.483Z"
     },
     {
       "id": "2026-08-18-reaction-fast",
