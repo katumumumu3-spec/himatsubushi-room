@@ -204,7 +204,7 @@
     },
     {
       "id": "2026-08-17-quiz-food",
-      "status": "pending",
+      "status": "generated",
       "template": "quiz",
       "name": "たべものクイズ",
       "description": "身近な食べ物に関するかんたんクイズで頭の体操を。",
@@ -215,7 +215,9 @@
       "config": {
         "topic": "food",
         "count": 5
-      }
+      },
+      "slug": "2026-08-17-quiz-food",
+      "generatedAt": "2026-08-17T02:18:02.263Z"
     },
     {
       "id": "2026-08-18-reaction-fast",
