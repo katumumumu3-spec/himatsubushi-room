@@ -224,7 +224,7 @@
     },
     {
       "id": "2026-08-18-reaction-fast",
-      "status": "pending",
+      "status": "generated",
       "template": "reaction",
       "name": "瞬間反応テスト",
       "description": "待ち時間が短め。素早い反応が求められるチャレンジ版です。",
@@ -235,7 +235,9 @@
       "config": {
         "minDelayMs": 800,
         "maxDelayMs": 2200
-      }
+      },
+      "slug": "2026-08-18-reaction-fast",
+      "generatedAt": "2026-08-18T02:13:58.767Z"
     },
     {
       "id": "2026-08-19-sort-rainbow",

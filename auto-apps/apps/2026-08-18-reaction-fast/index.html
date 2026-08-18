@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>瞬間反応テスト</title>
+  <meta name="description" content="待ち時間が短め。素早い反応が求められるチャレンジ版です。" />
+  <style>
+    :root { --ink:#263044; --coral:#ff6b6b; --mint:#58d6b0; --paper:#fffaf1; --blue:#5b8def; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; font-family:"Segoe UI","Hiragino Sans",sans-serif; color:var(--ink); background:linear-gradient(180deg,#dff7ef,var(--paper)); }
+    .wrap { width:min(460px,calc(100% - 24px)); text-align:center; }
+    h1 { margin:0 0 8px; font-size:1.4rem; }
+    .lead { color:#667085; line-height:1.6; }
+    #stage {
+      margin:18px auto; width:min(320px,80vw); height:min(220px,50vw); border:3px dashed var(--ink); border-radius:18px;
+      display:grid; place-items:center; background:#fff; font-size:1.2rem; font-weight:800; cursor:pointer; user-select:none;
+    }
+    #stage.is-wait { background:#eef4ff; }
+    #stage.is-go { background:var(--mint); }
+    #stage.is-early { background:#ffe0e3; }
+    .meta { font-weight:800; margin-top:10px; }
+    .room { display:inline-block; margin-top:18px; color:var(--coral); font-weight:800; }
+    button { margin-top:12px; border:2px solid var(--ink); border-radius:12px; background:#ffd166; font-weight:800; padding:8px 14px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>瞬間反応テスト</h1>
+    <p class="lead">待ち時間が短め。素早い反応が求められるチャレンジ版です。</p>
+    <div id="stage" class="is-wait">タップして開始</div>
+    <p class="meta">今回: <span id="current">-</span> ms　ベスト: <span id="best">-</span> ms</p>
+    <button type="button" id="reset">ベストをリセット</button>
+    <style>
+  .ad-slot-wrap{margin:18px 0 8px;text-align:center}
+  .ad-slot-wrap .ad-label{margin:0 0 6px;color:#667085;font-size:.75rem;font-weight:700}
+  .ad-slot{min-height:50px}
+</style>
+<aside class="ad-slot-wrap" aria-label="スポンサー">
+  <p class="ad-label">スポンサー</p>
+  <div class="ad-slot" id="admaxBottom"></div>
+</aside>
+<script>
+(function () {
+  var admaxId = "b9edd449a024966b9a7fcfb7435c5378";
+  var el = document.getElementById("admaxBottom");
+  if (!el || !admaxId) return;
+  var iframe = document.createElement("iframe");
+  iframe.title = "advertisement";
+  iframe.setAttribute("scrolling", "no");
+  iframe.setAttribute("frameborder", "0");
+  iframe.style.cssText = "display:block;width:100%;max-width:320px;height:100px;border:0;margin:0 auto;overflow:hidden;";
+  iframe.srcdoc = '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:0;text-align:center;background:transparent;"><script src="https://adm.shinobi.jp/s/' + admaxId + '"><\/script></body></html>';
+  el.appendChild(iframe);
+})();
+</script>
+    <div><a class="room" href="https://himatsubushiroom.com/" target="_blank" rel="noopener">もっと遊ぶ → ひまつぶしルーム</a></div>
+  </div>
+  <script>
+    const CONFIG = {"minDelayMs":800,"maxDelayMs":2200};
+    const minDelay = Math.max(800, Number(CONFIG.minDelayMs) || 1200);
+    const maxDelay = Math.max(minDelay + 200, Number(CONFIG.maxDelayMs) || 3500);
+    const storageKey = `reaction-best-2026-08-18-reaction-fast`;
+    const stage = document.getElementById("stage");
+    const currentEl = document.getElementById("current");
+    const bestEl = document.getElementById("best");
+    let state = "idle", timer = null, startAt = 0;
+    let best = Number(localStorage.getItem(storageKey) || 0) || null;
+    bestEl.textContent = best ? String(best) : "-";
+
+    function arm() {
+      state = "waiting";
+      stage.className = "is-wait";
+      stage.textContent = "緑になったらすぐタップ！";
+      const delay = minDelay + Math.random() * (maxDelay - minDelay);
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        state = "go";
+        startAt = performance.now();
+        stage.className = "is-go";
+        stage.textContent = "今だ！";
+      }, delay);
+    }
+
+    stage.addEventListener("click", () => {
+      if (state === "idle") { arm(); return; }
+      if (state === "waiting") {
+        clearTimeout(timer);
+        state = "idle";
+        stage.className = "is-early";
+        stage.textContent = "早すぎ！ タップして再挑戦";
+        return;
+      }
+      if (state === "go") {
+        const ms = Math.round(performance.now() - startAt);
+        currentEl.textContent = String(ms);
+        if (!best || ms < best) {
+          best = ms;
+          localStorage.setItem(storageKey, String(best));
+          bestEl.textContent = String(best);
+        }
+        state = "idle";
+        stage.className = "is-wait";
+        stage.textContent = `${ms} ms！ タップして再挑戦`;
+      }
+    });
+
+    document.getElementById("reset").addEventListener("click", () => {
+      localStorage.removeItem(storageKey);
+      best = null;
+      bestEl.textContent = "-";
+    });
+  </script>
+</body>
+</html>
