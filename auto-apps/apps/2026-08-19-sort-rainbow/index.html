@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>虹色ならべ</title>
+  <meta name="description" content="赤から紫まで、虹の順番に色名を並べ替えよう。" />
+  <style>
+    :root { --ink:#263044; --coral:#ff6b6b; --mint:#58d6b0; --paper:#fffaf1; --yellow:#ffd166; }
+    body { margin:0; min-height:100vh; font-family:"Segoe UI","Hiragino Sans",sans-serif; color:var(--ink); background:radial-gradient(circle at 20% 0%,#fff1c9,var(--paper)); }
+    .wrap { width:min(520px,calc(100% - 24px)); margin:0 auto; padding:22px 0 40px; }
+    h1 { margin:0 0 8px; font-size:1.4rem; }
+    .lead { color:#667085; line-height:1.6; }
+    .target,.pool { display:flex; flex-wrap:wrap; gap:8px; min-height:54px; padding:12px; margin-top:12px; background:#fff; border:2px dashed #c9d0dc; border-radius:14px; }
+    .chip { border:2px solid var(--ink); border-radius:999px; background:var(--yellow); padding:8px 12px; font-weight:800; cursor:grab; user-select:none; }
+    .chip.is-placed { background:#e7faf4; }
+    .actions { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+    button { border:2px solid var(--ink); border-radius:12px; background:#fff; font-weight:800; padding:8px 14px; cursor:pointer; }
+    button.primary { background:var(--coral); color:#fff; border-color:#d94848; }
+    #msg { margin-top:12px; font-weight:800; min-height:1.4em; }
+    .room { display:inline-block; margin-top:18px; color:var(--coral); font-weight:800; }
+    .hint { font-size:.85rem; color:#667085; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>虹色ならべ</h1>
+    <p class="lead">赤から紫まで、虹の順番に色名を並べ替えよう。</p>
+    <p class="hint">下のカードを正しい順番で上へ並べてください。</p>
+    <div class="target" id="target" aria-label="並べる場所"></div>
+    <div class="pool" id="pool" aria-label="カード置き場"></div>
+    <div class="actions">
+      <button type="button" class="primary" id="check">答え合わせ</button>
+      <button type="button" id="undo">1つ戻す</button>
+      <button type="button" id="restart">リセット</button>
+    </div>
+    <p id="msg"></p>
+    <style>
+  .ad-slot-wrap{margin:18px 0 8px;text-align:center}
+  .ad-slot-wrap .ad-label{margin:0 0 6px;color:#667085;font-size:.75rem;font-weight:700}
+  .ad-slot{min-height:50px}
+</style>
+<aside class="ad-slot-wrap" aria-label="スポンサー">
+  <p class="ad-label">スポンサー</p>
+  <div class="ad-slot" id="admaxBottom"></div>
+</aside>
+<script>
+(function () {
+  var admaxId = "b9edd449a024966b9a7fcfb7435c5378";
+  var el = document.getElementById("admaxBottom");
+  if (!el || !admaxId) return;
+  var iframe = document.createElement("iframe");
+  iframe.title = "advertisement";
+  iframe.setAttribute("scrolling", "no");
+  iframe.setAttribute("frameborder", "0");
+  iframe.style.cssText = "display:block;width:100%;max-width:320px;height:100px;border:0;margin:0 auto;overflow:hidden;";
+  iframe.srcdoc = '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:0;text-align:center;background:transparent;"><script src="https://adm.shinobi.jp/s/' + admaxId + '"><\/script></body></html>';
+  el.appendChild(iframe);
+})();
+</script>
+    <a class="room" href="https://himatsubushiroom.com/" target="_blank" rel="noopener">もっと遊ぶ → ひまつぶしルーム</a>
+  </div>
+  <script>
+    const CONFIG = {"preset":"rainbow"};
+    const PRESETS = {
+      numbers: ["1","2","3","4","5","6","7","8"],
+      week: ["月","火","水","木","金","土","日"],
+      rainbow: ["赤","橙","黄","緑","青","藍","紫"],
+      size: ["アリ","ネコ","イヌ","ウマ","ゾウ"],
+      steps: ["起きる","顔を洗う","朝ごはん","出かける"]
+    };
+    const sequence = Array.isArray(CONFIG.items) && CONFIG.items.length
+      ? CONFIG.items.map(String)
+      : (PRESETS[CONFIG.preset] || PRESETS.numbers).slice(0, Math.min(Math.max(Number(CONFIG.count) || 5, 3), 10));
+    const target = document.getElementById("target");
+    const pool = document.getElementById("pool");
+    const msg = document.getElementById("msg");
+    let placed = [];
+
+    function shuffle(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function render() {
+      target.innerHTML = "";
+      pool.innerHTML = "";
+      placed.forEach((value) => {
+        const chip = document.createElement("span");
+        chip.className = "chip is-placed";
+        chip.textContent = value;
+        target.appendChild(chip);
+      });
+      const remain = sequence.filter((value, idx) => placed.indexOf(value) === -1 || placed.filter(v => v === value).length < sequence.filter(v => v === value).length);
+      // simpler: remaining multiset
+      const counts = {};
+      sequence.forEach(v => { counts[v] = (counts[v] || 0) + 1; });
+      placed.forEach(v => { counts[v] -= 1; });
+      const remaining = [];
+      Object.entries(counts).forEach(([v, c]) => { for (let i = 0; i < c; i++) remaining.push(v); });
+      shuffle(remaining).forEach((value) => {
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "chip";
+        chip.textContent = value;
+        chip.addEventListener("click", () => {
+          placed.push(value);
+          msg.textContent = "";
+          render();
+        });
+        pool.appendChild(chip);
+      });
+    }
+
+    document.getElementById("check").addEventListener("click", () => {
+      if (placed.length !== sequence.length) {
+        msg.textContent = "まだ並べきっていません";
+        return;
+      }
+      const ok = placed.every((value, i) => value === sequence[i]);
+      msg.textContent = ok ? "正解！きれいな順番です" : "まだ違うよ。リセットして再挑戦！";
+    });
+    document.getElementById("undo").addEventListener("click", () => {
+      placed.pop();
+      msg.textContent = "";
+      render();
+    });
+    document.getElementById("restart").addEventListener("click", () => {
+      placed = [];
+      msg.textContent = "";
+      render();
+    });
+    render();
+  </script>
+</body>
+</html>
