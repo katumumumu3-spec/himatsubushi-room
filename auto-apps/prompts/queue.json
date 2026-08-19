@@ -244,7 +244,7 @@
     },
     {
       "id": "2026-08-19-sort-rainbow",
-      "status": "generated",
+      "status": "done",
       "template": "sort",
       "name": "虹色ならべ",
       "description": "赤から紫まで、虹の順番に色名を並べ替えよう。",
@@ -256,7 +256,10 @@
         "preset": "rainbow"
       },
       "slug": "2026-08-19-sort-rainbow",
-      "generatedAt": "2026-08-19T02:16:56.816Z"
+      "generatedAt": "2026-08-19T02:16:56.816Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-19-sort-rainbow/",
+      "firestoreId": "8Va26hMfeedoJ82leE9I",
+      "registeredAt": "2026-08-19T02:17:24.710Z"
     },
     {
       "id": "2026-08-20-memory-space",
