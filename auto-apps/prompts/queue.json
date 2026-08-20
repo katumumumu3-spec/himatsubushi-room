@@ -263,7 +263,7 @@
     },
     {
       "id": "2026-08-20-memory-space",
-      "status": "generated",
+      "status": "done",
       "template": "memory",
       "name": "宇宙神経衰弱",
       "description": "ロケットや星のカードで遊ぶ宇宙テーマの神経衰弱です。",
@@ -276,7 +276,10 @@
         "theme": "space"
       },
       "slug": "2026-08-20-memory-space",
-      "generatedAt": "2026-08-20T02:15:42.925Z"
+      "generatedAt": "2026-08-20T02:15:42.925Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-20-memory-space/",
+      "firestoreId": "f55yLxwUOTKHVFvuExHV",
+      "registeredAt": "2026-08-20T02:16:11.376Z"
     },
     {
       "id": "2026-08-21-quiz-truefalse",
