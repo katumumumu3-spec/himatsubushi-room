@@ -283,7 +283,7 @@
     },
     {
       "id": "2026-08-21-quiz-truefalse",
-      "status": "pending",
+      "status": "generated",
       "template": "quiz",
       "name": "〇×クイズ",
       "description": "正しいか間違いか、素早く判断する〇×クイズです。",
@@ -294,7 +294,9 @@
       "config": {
         "topic": "truefalse",
         "count": 5
-      }
+      },
+      "slug": "2026-08-21-quiz-truefalse",
+      "generatedAt": "2026-08-21T02:21:49.384Z"
     },
     {
       "id": "2026-08-22-clicker-20",
