@@ -283,7 +283,7 @@
     },
     {
       "id": "2026-08-21-quiz-truefalse",
-      "status": "generated",
+      "status": "done",
       "template": "quiz",
       "name": "〇×クイズ",
       "description": "正しいか間違いか、素早く判断する〇×クイズです。",
@@ -296,7 +296,10 @@
         "count": 5
       },
       "slug": "2026-08-21-quiz-truefalse",
-      "generatedAt": "2026-08-21T02:21:49.384Z"
+      "generatedAt": "2026-08-21T02:21:49.384Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-21-quiz-truefalse/",
+      "firestoreId": "lBRmqBPB7vsXBx9Czao6",
+      "registeredAt": "2026-08-21T02:22:17.913Z"
     },
     {
       "id": "2026-08-22-clicker-20",
