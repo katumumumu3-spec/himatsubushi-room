@@ -303,7 +303,7 @@
     },
     {
       "id": "2026-08-22-clicker-20",
-      "status": "pending",
+      "status": "generated",
       "template": "clicker",
       "name": "20秒耐久タップ",
       "description": "20秒間タップし続けてハイスコアを狙う耐久チャレンジです。",
@@ -315,7 +315,9 @@
         "durationSec": 20,
         "buttonLabel": "タップ！",
         "goal": 55
-      }
+      },
+      "slug": "2026-08-22-clicker-20",
+      "generatedAt": "2026-08-22T02:14:21.473Z"
     },
     {
       "id": "2026-08-23-sort-size",

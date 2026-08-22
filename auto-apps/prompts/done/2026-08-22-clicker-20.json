@@ -1,0 +1,18 @@
+{
+  "id": "2026-08-22-clicker-20",
+  "slug": "2026-08-22-clicker-20",
+  "template": "clicker",
+  "name": "20秒耐久タップ",
+  "description": "20秒間タップし続けてハイスコアを狙う耐久チャレンジです。",
+  "tags": [
+    "反射",
+    "耐久"
+  ],
+  "searchText": "20秒耐久タップ 20秒間タップし続けてハイスコアを狙う耐久チャレンジです。 反射 耐久",
+  "generatedAt": "2026-08-22T02:14:21.473Z",
+  "config": {
+    "durationSec": 20,
+    "buttonLabel": "タップ！",
+    "goal": 55
+  }
+}
