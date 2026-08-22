@@ -303,7 +303,7 @@
     },
     {
       "id": "2026-08-22-clicker-20",
-      "status": "generated",
+      "status": "done",
       "template": "clicker",
       "name": "20秒耐久タップ",
       "description": "20秒間タップし続けてハイスコアを狙う耐久チャレンジです。",
@@ -317,7 +317,10 @@
         "goal": 55
       },
       "slug": "2026-08-22-clicker-20",
-      "generatedAt": "2026-08-22T02:14:21.473Z"
+      "generatedAt": "2026-08-22T02:14:21.473Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-22-clicker-20/",
+      "firestoreId": "8KsxZqfaXNSat9mwmtFd",
+      "registeredAt": "2026-08-22T02:14:41.515Z"
     },
     {
       "id": "2026-08-23-sort-size",
