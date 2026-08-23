@@ -324,7 +324,7 @@
     },
     {
       "id": "2026-08-23-sort-size",
-      "status": "generated",
+      "status": "done",
       "template": "sort",
       "name": "大きさならべ",
       "description": "小さな生き物から大きな生き物へ、サイズ順に並べよう。",
@@ -336,7 +336,10 @@
         "preset": "size"
       },
       "slug": "2026-08-23-sort-size",
-      "generatedAt": "2026-08-23T02:22:14.602Z"
+      "generatedAt": "2026-08-23T02:22:14.602Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-23-sort-size/",
+      "firestoreId": "bsrEDqGB0q5EBxjfVvUi",
+      "registeredAt": "2026-08-23T02:22:34.383Z"
     },
     {
       "id": "2026-08-24-memory-easy",
