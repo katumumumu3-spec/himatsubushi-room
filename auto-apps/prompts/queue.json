@@ -343,7 +343,7 @@
     },
     {
       "id": "2026-08-24-memory-easy",
-      "status": "generated",
+      "status": "done",
       "template": "memory",
       "name": "かんたん神経衰弱",
       "description": "ペア数少なめ。はじめてでもすぐ遊べる入門神経衰弱です。",
@@ -356,7 +356,10 @@
         "theme": "default"
       },
       "slug": "2026-08-24-memory-easy",
-      "generatedAt": "2026-08-24T02:21:11.539Z"
+      "generatedAt": "2026-08-24T02:21:11.539Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-24-memory-easy/",
+      "firestoreId": "kBvJ5LIZP9MEVKhlfW5M",
+      "registeredAt": "2026-08-24T02:21:39.410Z"
     },
     {
       "id": "2026-08-25-quiz-japan-short",
