@@ -1,0 +1,17 @@
+{
+  "id": "2026-08-24-memory-easy",
+  "slug": "2026-08-24-memory-easy",
+  "template": "memory",
+  "name": "かんたん神経衰弱",
+  "description": "ペア数少なめ。はじめてでもすぐ遊べる入門神経衰弱です。",
+  "tags": [
+    "パズル",
+    "かんたん"
+  ],
+  "searchText": "かんたん神経衰弱 ペア数少なめ。はじめてでもすぐ遊べる入門神経衰弱です。 パズル かんたん",
+  "generatedAt": "2026-08-24T02:21:11.539Z",
+  "config": {
+    "pairs": 4,
+    "theme": "default"
+  }
+}
