@@ -363,7 +363,7 @@
     },
     {
       "id": "2026-08-25-quiz-japan-short",
-      "status": "generated",
+      "status": "done",
       "template": "quiz",
       "name": "日本クイズ3問",
       "description": "3問だけの超短クイズ。待ち時間にちょうどいいボリュームです。",
@@ -376,7 +376,10 @@
         "count": 3
       },
       "slug": "2026-08-25-quiz-japan-short",
-      "generatedAt": "2026-08-25T02:16:30.360Z"
+      "generatedAt": "2026-08-25T02:16:30.360Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-25-quiz-japan-short/",
+      "firestoreId": "PBmQwvPhhzm3tVZ6jhHK",
+      "registeredAt": "2026-08-25T02:16:50.360Z"
     },
     {
       "id": "2026-08-26-reaction-slow",
