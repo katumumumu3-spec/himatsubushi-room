@@ -1,0 +1,17 @@
+{
+  "id": "2026-08-25-quiz-japan-short",
+  "slug": "2026-08-25-quiz-japan-short",
+  "template": "quiz",
+  "name": "日本クイズ3問",
+  "description": "3問だけの超短クイズ。待ち時間にちょうどいいボリュームです。",
+  "tags": [
+    "クイズ",
+    "短時間"
+  ],
+  "searchText": "日本クイズ3問 3問だけの超短クイズ。待ち時間にちょうどいいボリュームです。 クイズ 短時間",
+  "generatedAt": "2026-08-25T02:16:30.360Z",
+  "config": {
+    "topic": "japan",
+    "count": 3
+  }
+}
