@@ -383,7 +383,7 @@
     },
     {
       "id": "2026-08-26-reaction-slow",
-      "status": "pending",
+      "status": "generated",
       "template": "reaction",
       "name": "じっくり反応",
       "description": "待ち時間が長め。焦らず、緑を待ってからタップしよう。",
@@ -394,7 +394,9 @@
       "config": {
         "minDelayMs": 1500,
         "maxDelayMs": 4500
-      }
+      },
+      "slug": "2026-08-26-reaction-slow",
+      "generatedAt": "2026-08-26T02:23:23.120Z"
     },
     {
       "id": "2026-08-27-sort-morning",

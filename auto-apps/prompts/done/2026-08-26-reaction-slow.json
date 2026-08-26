@@ -1,0 +1,17 @@
+{
+  "id": "2026-08-26-reaction-slow",
+  "slug": "2026-08-26-reaction-slow",
+  "template": "reaction",
+  "name": "じっくり反応",
+  "description": "待ち時間が長め。焦らず、緑を待ってからタップしよう。",
+  "tags": [
+    "反射",
+    "リラックス"
+  ],
+  "searchText": "じっくり反応 待ち時間が長め。焦らず、緑を待ってからタップしよう。 反射 リラックス",
+  "generatedAt": "2026-08-26T02:23:23.120Z",
+  "config": {
+    "minDelayMs": 1500,
+    "maxDelayMs": 4500
+  }
+}
