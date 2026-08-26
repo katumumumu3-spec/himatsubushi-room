@@ -383,7 +383,7 @@
     },
     {
       "id": "2026-08-26-reaction-slow",
-      "status": "generated",
+      "status": "done",
       "template": "reaction",
       "name": "じっくり反応",
       "description": "待ち時間が長め。焦らず、緑を待ってからタップしよう。",
@@ -396,7 +396,10 @@
         "maxDelayMs": 4500
       },
       "slug": "2026-08-26-reaction-slow",
-      "generatedAt": "2026-08-26T02:23:23.120Z"
+      "generatedAt": "2026-08-26T02:23:23.120Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-26-reaction-slow/",
+      "firestoreId": "SkftUrEq4AYScJayvcfV",
+      "registeredAt": "2026-08-26T02:23:51.034Z"
     },
     {
       "id": "2026-08-27-sort-morning",
