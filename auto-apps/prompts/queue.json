@@ -403,7 +403,7 @@
     },
     {
       "id": "2026-08-27-sort-morning",
-      "status": "generated",
+      "status": "done",
       "template": "sort",
       "name": "朝のしたくならべ",
       "description": "朝の行動を正しい順番に並べる生活ルーティンパズルです。",
@@ -415,7 +415,10 @@
         "preset": "steps"
       },
       "slug": "2026-08-27-sort-morning",
-      "generatedAt": "2026-08-27T10:53:02.506Z"
+      "generatedAt": "2026-08-27T10:53:02.506Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-27-sort-morning/",
+      "firestoreId": "Pevd5bv3D7xMYXOYW7Fd",
+      "registeredAt": "2026-08-27T10:53:21.445Z"
     },
     {
       "id": "2026-08-28-clicker-goal50",
