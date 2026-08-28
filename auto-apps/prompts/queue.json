@@ -422,7 +422,7 @@
     },
     {
       "id": "2026-08-28-clicker-goal50",
-      "status": "generated",
+      "status": "done",
       "template": "clicker",
       "name": "目標50タップ",
       "description": "15秒で50回を目指す目標付きタップチャレンジです。",
@@ -436,7 +436,10 @@
         "goal": 50
       },
       "slug": "2026-08-28-clicker-goal50",
-      "generatedAt": "2026-08-28T12:28:45.326Z"
+      "generatedAt": "2026-08-28T12:28:45.326Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-28-clicker-goal50/",
+      "firestoreId": "aAubOD34CyTygXel5G9j",
+      "registeredAt": "2026-08-28T12:29:13.767Z"
     },
     {
       "id": "2026-08-29-memory-fruits-hard",
