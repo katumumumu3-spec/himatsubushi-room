@@ -422,7 +422,7 @@
     },
     {
       "id": "2026-08-28-clicker-goal50",
-      "status": "pending",
+      "status": "generated",
       "template": "clicker",
       "name": "目標50タップ",
       "description": "15秒で50回を目指す目標付きタップチャレンジです。",
@@ -434,7 +434,9 @@
         "durationSec": 15,
         "buttonLabel": "GO!",
         "goal": 50
-      }
+      },
+      "slug": "2026-08-28-clicker-goal50",
+      "generatedAt": "2026-08-28T12:28:45.326Z"
     },
     {
       "id": "2026-08-29-memory-fruits-hard",

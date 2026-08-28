@@ -1,0 +1,18 @@
+{
+  "id": "2026-08-28-clicker-goal50",
+  "slug": "2026-08-28-clicker-goal50",
+  "template": "clicker",
+  "name": "目標50タップ",
+  "description": "15秒で50回を目指す目標付きタップチャレンジです。",
+  "tags": [
+    "反射",
+    "目標"
+  ],
+  "searchText": "目標50タップ 15秒で50回を目指す目標付きタップチャレンジです。 反射 目標",
+  "generatedAt": "2026-08-28T12:28:45.326Z",
+  "config": {
+    "durationSec": 15,
+    "buttonLabel": "GO!",
+    "goal": 50
+  }
+}
