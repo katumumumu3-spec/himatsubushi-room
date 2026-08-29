@@ -443,7 +443,7 @@
     },
     {
       "id": "2026-08-29-memory-fruits-hard",
-      "status": "generated",
+      "status": "done",
       "template": "memory",
       "name": "フルーツ神経衰弱HARD",
       "description": "ペア多めのフルーツ神経衰弱。記憶力に自信がある人向けです。",
@@ -456,7 +456,10 @@
         "theme": "fruits"
       },
       "slug": "2026-08-29-memory-fruits-hard",
-      "generatedAt": "2026-08-29T07:38:53.725Z"
+      "generatedAt": "2026-08-29T07:38:53.725Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-29-memory-fruits-hard/",
+      "firestoreId": "faRzp0McyoL0IPTwz9Lu",
+      "registeredAt": "2026-08-29T07:39:22.280Z"
     },
     {
       "id": "2026-08-30-quiz-animals-short",
