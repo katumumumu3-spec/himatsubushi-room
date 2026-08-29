@@ -443,7 +443,7 @@
     },
     {
       "id": "2026-08-29-memory-fruits-hard",
-      "status": "pending",
+      "status": "generated",
       "template": "memory",
       "name": "フルーツ神経衰弱HARD",
       "description": "ペア多めのフルーツ神経衰弱。記憶力に自信がある人向けです。",
@@ -454,7 +454,9 @@
       "config": {
         "pairs": 10,
         "theme": "fruits"
-      }
+      },
+      "slug": "2026-08-29-memory-fruits-hard",
+      "generatedAt": "2026-08-29T07:38:53.725Z"
     },
     {
       "id": "2026-08-30-quiz-animals-short",
