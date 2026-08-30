@@ -463,7 +463,7 @@
     },
     {
       "id": "2026-08-30-quiz-animals-short",
-      "status": "pending",
+      "status": "generated",
       "template": "quiz",
       "name": "どうぶつクイズ3問",
       "description": "どうぶつテーマの短いクイズ。サクッと遊べます。",
@@ -474,7 +474,9 @@
       "config": {
         "topic": "animals",
         "count": 3
-      }
+      },
+      "slug": "2026-08-30-quiz-animals-short",
+      "generatedAt": "2026-08-30T06:12:45.830Z"
     },
     {
       "id": "2026-08-31-sort-custom-seasons",

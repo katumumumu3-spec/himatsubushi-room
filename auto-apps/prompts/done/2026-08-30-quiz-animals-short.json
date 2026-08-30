@@ -1,0 +1,17 @@
+{
+  "id": "2026-08-30-quiz-animals-short",
+  "slug": "2026-08-30-quiz-animals-short",
+  "template": "quiz",
+  "name": "どうぶつクイズ3問",
+  "description": "どうぶつテーマの短いクイズ。サクッと遊べます。",
+  "tags": [
+    "クイズ",
+    "どうぶつ"
+  ],
+  "searchText": "どうぶつクイズ3問 どうぶつテーマの短いクイズ。サクッと遊べます。 クイズ どうぶつ",
+  "generatedAt": "2026-08-30T06:12:45.830Z",
+  "config": {
+    "topic": "animals",
+    "count": 3
+  }
+}
