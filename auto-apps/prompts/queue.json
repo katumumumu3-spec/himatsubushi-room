@@ -483,7 +483,7 @@
     },
     {
       "id": "2026-08-31-sort-custom-seasons",
-      "status": "generated",
+      "status": "done",
       "template": "sort",
       "name": "四季ならべ",
       "description": "春・夏・秋・冬を正しい順番に並べるかんたんパズルです。",
@@ -500,7 +500,10 @@
         ]
       },
       "slug": "2026-08-31-sort-custom-seasons",
-      "generatedAt": "2026-08-31T06:38:17.579Z"
+      "generatedAt": "2026-08-31T06:38:17.579Z",
+      "url": "https://apps.himatsubushiroom.com/apps/2026-08-31-sort-custom-seasons/",
+      "firestoreId": "7UdTyR5SzZrptMTRDBOV",
+      "registeredAt": "2026-08-31T06:38:37.226Z"
     },
     {
       "id": "2026-09-01-reaction-pro",
