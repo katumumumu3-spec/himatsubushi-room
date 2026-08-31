@@ -483,7 +483,7 @@
     },
     {
       "id": "2026-08-31-sort-custom-seasons",
-      "status": "pending",
+      "status": "generated",
       "template": "sort",
       "name": "四季ならべ",
       "description": "春・夏・秋・冬を正しい順番に並べるかんたんパズルです。",
@@ -498,7 +498,9 @@
           "秋",
           "冬"
         ]
-      }
+      },
+      "slug": "2026-08-31-sort-custom-seasons",
+      "generatedAt": "2026-08-31T06:38:17.579Z"
     },
     {
       "id": "2026-09-01-reaction-pro",
