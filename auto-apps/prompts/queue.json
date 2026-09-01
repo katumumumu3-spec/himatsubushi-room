@@ -507,7 +507,7 @@
     },
     {
       "id": "2026-09-01-reaction-pro",
-      "status": "pending",
+      "status": "generated",
       "template": "reaction",
       "name": "反応速度PRO",
       "description": "ベストタイム更新を目指す反応速度チャレンジです。",
@@ -518,7 +518,9 @@
       "config": {
         "minDelayMs": 900,
         "maxDelayMs": 2800
-      }
+      },
+      "slug": "2026-09-01-reaction-pro",
+      "generatedAt": "2026-09-01T06:00:10.844Z"
     },
     {
       "id": "2026-09-02-memory-animals-hard",
