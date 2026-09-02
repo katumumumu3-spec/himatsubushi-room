@@ -1,0 +1,17 @@
+{
+  "id": "2026-09-02-memory-animals-hard",
+  "slug": "2026-09-02-memory-animals-hard",
+  "template": "memory",
+  "name": "どうぶつ神経衰弱HARD",
+  "description": "カード多めのどうぶつ神経衰弱。集中力が試されます。",
+  "tags": [
+    "パズル",
+    "むずかしい"
+  ],
+  "searchText": "どうぶつ神経衰弱hard カード多めのどうぶつ神経衰弱。集中力が試されます。 パズル むずかしい",
+  "generatedAt": "2026-09-02T05:25:41.091Z",
+  "config": {
+    "pairs": 10,
+    "theme": "animals"
+  }
+}

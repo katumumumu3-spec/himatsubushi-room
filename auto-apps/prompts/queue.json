@@ -527,7 +527,7 @@
     },
     {
       "id": "2026-09-02-memory-animals-hard",
-      "status": "pending",
+      "status": "generated",
       "template": "memory",
       "name": "どうぶつ神経衰弱HARD",
       "description": "カード多めのどうぶつ神経衰弱。集中力が試されます。",
@@ -538,7 +538,9 @@
       "config": {
         "pairs": 10,
         "theme": "animals"
-      }
+      },
+      "slug": "2026-09-02-memory-animals-hard",
+      "generatedAt": "2026-09-02T05:25:41.091Z"
     },
     {
       "id": "2026-09-03-quiz-food-short",
