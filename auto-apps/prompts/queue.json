@@ -547,7 +547,7 @@
     },
     {
       "id": "2026-09-03-quiz-food-short",
-      "status": "pending",
+      "status": "generated",
       "template": "quiz",
       "name": "たべものクイズ3問",
       "description": "食べ物テーマの3問クイズ。お腹が空くかも？",
@@ -558,7 +558,9 @@
       "config": {
         "topic": "food",
         "count": 3
-      }
+      },
+      "slug": "2026-09-03-quiz-food-short",
+      "generatedAt": "2026-09-03T05:27:27.403Z"
     },
     {
       "id": "2026-09-04-clicker-30",

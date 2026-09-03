@@ -1,0 +1,17 @@
+{
+  "id": "2026-09-03-quiz-food-short",
+  "slug": "2026-09-03-quiz-food-short",
+  "template": "quiz",
+  "name": "たべものクイズ3問",
+  "description": "食べ物テーマの3問クイズ。お腹が空くかも？",
+  "tags": [
+    "クイズ",
+    "食べ物"
+  ],
+  "searchText": "たべものクイズ3問 食べ物テーマの3問クイズ。お腹が空くかも? クイズ 食べ物",
+  "generatedAt": "2026-09-03T05:27:27.403Z",
+  "config": {
+    "topic": "food",
+    "count": 3
+  }
+}
