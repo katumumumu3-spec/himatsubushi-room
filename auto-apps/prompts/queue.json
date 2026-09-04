@@ -564,7 +564,7 @@
     },
     {
       "id": "2026-09-04-clicker-30",
-      "status": "pending",
+      "status": "generated",
       "template": "clicker",
       "name": "30秒タップマラソン",
       "description": "30秒間タップし続ける長めのスコアアタックです。",
@@ -576,7 +576,9 @@
         "durationSec": 30,
         "buttonLabel": "タップ！",
         "goal": 80
-      }
+      },
+      "slug": "2026-09-04-clicker-30",
+      "generatedAt": "2026-09-04T05:34:39.330Z"
     },
     {
       "id": "2026-09-05-sort-numbers-easy",

@@ -1,0 +1,18 @@
+{
+  "id": "2026-09-04-clicker-30",
+  "slug": "2026-09-04-clicker-30",
+  "template": "clicker",
+  "name": "30秒タップマラソン",
+  "description": "30秒間タップし続ける長めのスコアアタックです。",
+  "tags": [
+    "反射",
+    "耐久"
+  ],
+  "searchText": "30秒タップマラソン 30秒間タップし続ける長めのスコアアタックです。 反射 耐久",
+  "generatedAt": "2026-09-04T05:34:39.330Z",
+  "config": {
+    "durationSec": 30,
+    "buttonLabel": "タップ！",
+    "goal": 80
+  }
+}
