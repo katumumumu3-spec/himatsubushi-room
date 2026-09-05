@@ -582,7 +582,7 @@
     },
     {
       "id": "2026-09-05-sort-numbers-easy",
-      "status": "pending",
+      "status": "generated",
       "template": "sort",
       "name": "数字ならべ1〜5",
       "description": "1から5までを順番に並べる入門パズルです。",
@@ -593,7 +593,9 @@
       "config": {
         "preset": "numbers",
         "count": 5
-      }
+      },
+      "slug": "2026-09-05-sort-numbers-easy",
+      "generatedAt": "2026-09-05T05:14:30.292Z"
     }
   ]
 }
